@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Car>
+
+@{
+    ViewData["Title"] = "Results";
+}
+
+<h1>Results</h1>
+
+@if (Model.Count() == 0)
+{
+    <p>No results. <a href="Index">Search again?</a></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Make
+                </th>
+                <th>
+                    Model
+                </th>
+                <th>
+                    Year
+                </th>
+                <th>
+                    Color
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.CarId
+                    </td>
+                    <td>
+                        @item.Make
+                    </td>
+                    <td>
+                        @item.Model
+                    </td>
+                    <td>
+                        @item.Year
+                    </td>
+                    <td>
+                        @item.Color
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
